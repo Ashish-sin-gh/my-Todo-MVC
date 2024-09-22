@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>todos</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>YOUR TODO LIST</h1>
@@ -14,11 +16,16 @@
   <ul>
     <% todoitems.forEach((item, idx) => { %>
          <li class="todoItem" data-id="<%= item._id %>">
-          <span class="<%= item.completed === true ? 'completed' : 'not-completed' %>"> <%= item.todoItem %></span>
-          <span><button>delete</button></span>
+          <span class="<%= item.completed === true ? 'completed' : 'not-completed' %>"><%= item.todoItem %></span>
+          <button class="deleteBtn">delete</button>
          </li>  
     <% }) %>
   </ul>
-
+  
+  <script src="client.js"></script>
 </body>
+
 </html>
+
+
+

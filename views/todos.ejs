@@ -6,6 +6,19 @@
   <title>todos</title>
 </head>
 <body>
-  <h1>write the code for todos here</h1>
+  <h1>YOUR TODO LIST</h1>
+  <form action="/todos/createTodo" method="POST">
+    <input type="text" placeholder="enter the item" name="todoItem">
+    <button>submit</button>
+  </form>
+  <ul>
+    <% todoitems.forEach((item, idx) => { %>
+         <li class="todoItem" data-id="<%= item._id %>">
+          <span class="<%= item.completed === true ? 'completed' : 'not-completed' %>"> <%= item.todoItem %></span>
+          <span><button>delete</button></span>
+         </li>  
+    <% }) %>
+  </ul>
+
 </body>
 </html>
